@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <a href="{% url 'create-room' %}">Create Room</a>
+    <a href="room"><h1>Room</h1></a>
+    {% block content %}
+    
+    {% endblock %}
+    List of Rooms : 
+
+    {% for r in rooms %}
+        <span>@{{ r.host }}</span>
+        <h5>{{ r.id }} -- <a href="room/{{ r.id }}">{{ r.name }}</a></h5>
+        <small>{{ r.topic.name }}</small>
+
+        <a href="{% url 'update-room' r.id %}">Edit</a><br>
+        <a href="{% url 'delete' r.id %}">Delete</a>
+        <hr>
+    {% endfor %}
+    <h2><a href="{% url 'create-message' %}">Compose!</a></h2>
+</body>
+</html>

@@ -1,0 +1,4 @@
+List of Mobiles : 
+{% for m in mobiles %}
+    <a href="info/{{m.id}}/">{{ m.name }}</a> / {{ m.date_of_release }} <br/>
+{% endfor %}

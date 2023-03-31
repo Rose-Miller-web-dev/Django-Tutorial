@@ -1,0 +1,6 @@
+<h1>Welcome To SoundCloud!</h1>
+
+{% for s in singers %}
+    <a href="singer/{{ s.id }}/"><h5>{{ s.name }}</h5></a>
+{% endfor %}
+
